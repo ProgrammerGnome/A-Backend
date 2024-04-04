@@ -1,0 +1,23 @@
+/* ListAllSales.css */
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+table {
+    background-color: #B6D6FF;
+    padding: 1%;
+    width: 100%
+}
