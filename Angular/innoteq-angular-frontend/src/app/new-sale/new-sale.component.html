@@ -1,0 +1,21 @@
+<form (ngSubmit)="submitForm()">
+  <h4><p style="color:white;">Új vásárlás rögzítése</p></h4>
+  <p>
+    Ugyanazzal a névvel többször leadott rendelés esetén az illetőhöz más-más ID fog tartozni,
+    <br/>de a dolgozói fogyasztásriportban egy név csak egyszer szerepel.
+  </p>
+  <input type="text" [(ngModel)]="personName" name="personName" placeholder="Dolgozó neve" required>
+  <div *ngFor="let input of inputs; let index = index">
+    <select [(ngModel)]="input.productName" name="productName" required>
+      <option *ngFor="let option of productOptions" [value]="option">{{ option }}</option>
+    </select>
+    <input type="number" [(ngModel)]="input.quantity" name="quantity" placeholder="Mennyiség" required>
+    <button type="button" (click)="removeInput(index)">Törlés</button>
+  </div>
+  <p>
+    <button type="button" (click)="addInput()">Hozzáadás</button>
+  </p>
+  <button type="submit">Értékesítés leadása</button>
+</form>
+
+<button (click)="fun()">xy</button>
