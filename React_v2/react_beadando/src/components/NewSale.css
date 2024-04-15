@@ -1,0 +1,26 @@
+/* NewSale.css */
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
+.container {
+    margin-top: 50px;
+    .columns {
+        vertical-align: center;
+        horiz-align: center;
+        width: 100%;
+    }
+    font-size: 20px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.box {
+    vertical-align: center;
+    horiz-align: center;
+    background-color: #4695D6;
+    padding: 1%;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    width: 100%;
+}
