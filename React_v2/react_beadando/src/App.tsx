@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './App.css';
-import MainSite from './components/mainSite';
+import MainSite from './mainSite.tsx';
 import NewSale from './components/NewSale';
 import ListAllSales from './components/ListAllSales';
 import ListAllClosedSales from './components/ListAllClosedSales';
@@ -24,7 +24,6 @@ const App: React.FC = () => {
                     <Route path="/product-sales-report" element={<ProductSalesReport/>}/>
                     <Route path="/employee-consumption-report" element={<EmployeeConsumptionReport/>}/>
                 </Routes>
-
             </Router>
         </QueryClientProvider>
     );

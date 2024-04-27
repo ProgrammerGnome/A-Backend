@@ -12,14 +12,13 @@ const ListAllSales: React.FC = () => {
 
     return (
         <div className="container mx-auto px-4">
-            <br/>
-            <h4 className="text-center font-bold text-xl mb-4">Lezajlott, de még nem lezárt értékesítések</h4>
+            <h2 className="title"><br></br>Lezajlott, de még nem lezárt értékesítések<p></p></h2>
             <p>
                 A lezajlott, de még nem lezárt rendeléseket itt tudja megtekinteni és módosítani, lezárni és
                 törölni.
                 Ez a felsorolás a vásárlás pontos ideje szerint van rendezve (legújabbak felül). <br/>
                 Ha szeretne utólag új terméket felvenni egy értékesítéshez, kövesse az alábbiakat: <br/>
-                Adja hozzá azokat az oldal címére kattintva, majd itt a táblázatban legfelűl fog megjelenni,
+                Adja hozzá azokat <a href="/new-sale">ide</a> kattintva, majd itt a táblázatban legfelűl fog megjelenni,
                 és módosíthatja megfelelőre a dátumidejét.
             </p>
             <div className="overflow-x-auto">
@@ -101,6 +100,9 @@ const ListAllSales: React.FC = () => {
                     </tbody>
                 </table>
             </div>
+            <br></br>
+            <a href="/" className="text-blue-500 hover:underline"> BACK || Vissza a főoldalra </a>
+            <br></br>
         </div>
     );
 };

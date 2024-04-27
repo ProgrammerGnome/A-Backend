@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useMutation } from 'react-query';
+import React, {useState, useEffect} from 'react';
+import {useMutation} from 'react-query';
 import './NewSale.css';
 import {getBaseURL} from "../BacendConfig.ts";
 
 const NewSale: React.FC = () => {
     const [personName, setPersonName] = useState('');
-    const [inputs, setInputs] = useState([{ productName: '', quantity: '' }]);
+    const [inputs, setInputs] = useState([{productName: '', quantity: ''}]);
     const [selectedProducts, setSelectedProducts] = useState<{ [key: number]: boolean }>({});
     const [productOptions, setProductOptions] = useState<string[]>([]);
 
@@ -19,7 +19,7 @@ const NewSale: React.FC = () => {
     const handleOptionClick = (option: string, index: number) => {
         setInputs((prevInputs) =>
             prevInputs.map((input, i) =>
-                i === index ? { ...input, productName: option } : input
+                i === index ? {...input, productName: option} : input
             )
         );
         setSelectedProducts((prevSelectedProducts) => ({
@@ -29,7 +29,7 @@ const NewSale: React.FC = () => {
     };
 
     const addInput = () => {
-        setInputs([...inputs, { productName: '', quantity: '' }]);
+        setInputs([...inputs, {productName: '', quantity: ''}]);
     };
 
     const removeInput = (index: number) => {
@@ -38,7 +38,7 @@ const NewSale: React.FC = () => {
 
     const fetchProductOptions = async () => {
         try {
-            const response = await fetch(getBaseURL()+'productInfo');
+            const response = await fetch(getBaseURL() + 'productInfo');
             const data = await response.json();
             setProductOptions(data.map((product: { productName: string }) => product.productName));
         } catch (error) {
@@ -47,7 +47,7 @@ const NewSale: React.FC = () => {
     };
 
     const saveNewSaleMutation = useMutation((personItemData: any) =>
-        fetch(getBaseURL()+'save-new-sale', {
+        fetch(getBaseURL() + 'save-new-sale', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,9 +84,10 @@ const NewSale: React.FC = () => {
     return (
         <div className="container">
             <div className="columns">
+                <a href="/" className="text-blue-500 hover:underline"> BACK || Vissza a főoldalra </a>
                 <form onSubmit={submitForm} className="box">
                     <h4 className="title has-text-white">Új vásárlás rögzítése</h4>
-                    <br />
+                    <br/>
                     <input
                         className="input"
                         type="text"
@@ -103,7 +104,8 @@ const NewSale: React.FC = () => {
                                     onClick={() => handleDropdownClick(index)}
                                 >
                                     <div className="dropdown-trigger">
-                                        <button className="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                                        <button className="button" type={"button"} aria-haspopup="true"
+                                                aria-controls="dropdown-menu">
                                             <span>{input.productName || 'Válasszon terméket!'}</span>
                                             <span className="icon is-small">
                                                 <i className="fas fa-angle-down" aria-hidden="true"></i>
@@ -113,7 +115,8 @@ const NewSale: React.FC = () => {
                                     <div className="dropdown-menu" id="dropdown-menu" role="menu">
                                         <div className="dropdown-content">
                                             {productOptions.map((option, optionIndex) => (
-                                                <a key={optionIndex} className="dropdown-item" onClick={() => handleOptionClick(option, index)}>
+                                                <a key={optionIndex} className="dropdown-item"
+                                                   onClick={() => handleOptionClick(option, index)}>
                                                     {option}
                                                 </a>
                                             ))}

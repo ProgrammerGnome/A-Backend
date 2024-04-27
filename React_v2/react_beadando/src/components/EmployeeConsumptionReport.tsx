@@ -37,7 +37,9 @@ const EmployeeConsumptionReport: React.FC = () => {
     return (
         <center>
             <div>
-                <h2><p style={{ color: 'white' }}>Dolgozói fogyasztásriport</p></h2>
+                <h2><p className="title"><br></br>Dolgozói fogyasztásriport</p><p></p>
+                    <p>Rendezve a dolgozók felhasználónevükre alfabetikusan.</p>
+                </h2>
                 <h4>A jelenlegi hónap: {currentMonth}</h4>
                 <table className="table">
                     <thead>
@@ -64,6 +66,9 @@ const EmployeeConsumptionReport: React.FC = () => {
                     </tbody>
                 </table>
             </div>
+            <br></br>
+            <a href="/" className="text-blue-500 hover:underline"> BACK || Vissza a főoldalra </a>
+            <br></br>
         </center>
     );
 };

@@ -37,7 +37,7 @@ const ProductSalesReport: React.FC = () => {
     return (
         <center>
             <div>
-                <h2><p style={{ color: 'white' }}>Termékek fogyásának riportja</p></h2>
+                <h2><p className="title"><br></br>Termékek fogyásának riportja</p><p></p></h2>
                 <p>Rendezve a fogyás mennyiségére fordítottan (legnagyobbak felül).</p>
                 <h4>A jelenlegi hónap: {currentMonth}</h4>
                 <table className="table">
@@ -65,6 +65,9 @@ const ProductSalesReport: React.FC = () => {
                     </tbody>
                 </table>
             </div>
+            <br></br>
+            <a href="/" className="text-blue-500 hover:underline"> BACK || Vissza a főoldalra </a>
+            <br></br>
         </center>
     );
 };

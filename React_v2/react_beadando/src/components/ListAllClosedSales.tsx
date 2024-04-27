@@ -26,8 +26,7 @@ const ListAllClosedSales: React.FC = () => {
     return (
         <center>
             <div>
-                <br />
-                <h4>Lezárt értékesítések</h4>
+                <p className="title"><br></br>Lezárt értékesítések</p><p></p>
                 <p>A lezárás pontos ideje szerint rendezve (legrégebben lezártak alul).</p>
                 <table className="table">
                     <thead>
@@ -78,6 +77,9 @@ const ListAllClosedSales: React.FC = () => {
                     </tbody>
                 </table>
             </div>
+            <br></br>
+            <a href="/" className="text-blue-500 hover:underline"> BACK || Vissza a főoldalra </a>
+            <br></br>
         </center>
     );
 };
